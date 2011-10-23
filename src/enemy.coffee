@@ -41,7 +41,7 @@ Enemy = (I) ->
     rain_down = (enemy) ->
         enemy.I.velocity.add Point 0,5
 
-    rain_down()
+    chase_player @
 
     I.x += I.velocity.x
     I.y += I.velocity.y
