@@ -12,19 +12,7 @@ Player = (I) ->
   self = Circle(I).extend
     center: -> Point(I.x, I.y)
 
-  create_weapon_select_handlers = ->
-    wheel_position = 0
-    wheel_insensitivity = 200
-    window.addEventListener 'mousewheel', (event) ->
-      wheel_position += event.wheelDeltaY
-      wheel_position = wheel_position.clamp(0, (primes.length-1) * wheel_insensitivity)
-      I.value = primes[Math.floor(wheel_position / wheel_insensitivity) % primes.length]
-
-    window.addEventListener 'keydown', (event) ->
-      number = event.which - 48
-      if number in primes
-        I.value = number        
-  create_weapon_select_handlers()
+  create_weapon_select_handlers(I)
 
 
   self.bind "update", ->
@@ -74,4 +62,16 @@ player_movement = (I) ->
       self.value = 7
 ###
 
+create_weapon_select_handlers = (I) ->
+  wheel_position = 0
+  wheel_insensitivity = 200
+  window.addEventListener 'mousewheel', (event) ->
+    wheel_position += event.wheelDeltaY
+    wheel_position = wheel_position.clamp(0, (primes.length-1) * wheel_insensitivity)
+    I.value = primes[Math.floor(wheel_position / wheel_insensitivity) % primes.length]
+
+  window.addEventListener 'keydown', (event) ->
+    number = event.which - 48
+    if number in primes
+      I.value = number        
 
