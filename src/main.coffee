@@ -43,7 +43,7 @@ engine.bind 'update', ->
     #dude_position = Matrix.rotation(random_angle).transformPoint(spawn_distance)
     engine.add
       class:"Enemy"
-      x: 200
+      x: random_between 0, window_size.x
       y: 0
       value: random_multiple(5)
 
