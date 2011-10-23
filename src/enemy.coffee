@@ -25,20 +25,26 @@ Enemy = (I) ->
     10 + Math.log(I.value) *1.1
 
   self.bind 'update', ->
+    I.velocity = Point 0,0
+
     # combine
     for enemy in engine.find "Enemy"
       if enemy != self
         if circular_collision self, enemy
           self.merge enemy
-          console.log "yeah"
 
-    # chase player
-    player = engine.find('Player')[0]
-    player_direction = player.center().subtract(self.center()).norm()
-    velocity = player_direction
+    chase_player = (enemy) ->
+        player = engine.find('Player')[0]
+        player_direction = player.center().subtract(self.center()).norm()
+        I.velocity.add player_direction
 
-    I.x += velocity.x
-    I.y += velocity.y
+    rain_down = (enemy) ->
+        I.velocity.add Point 0,5
+
+    rain_down()
+
+    I.x += I.velocity.x
+    I.y += I.velocity.y
 
   self.hit = (value) ->
     if I.value % value == 0
@@ -52,3 +58,5 @@ Enemy = (I) ->
     other.destroy()
 
   return self
+
+
