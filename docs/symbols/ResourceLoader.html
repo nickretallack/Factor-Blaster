@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="generator" content="JsDoc Toolkit" />
     
-    <title>JsDoc Reference - Math</title>
+    <title>JsDoc Reference - ResourceLoader</title>
     <link href="/stylesheets/docs.css" type="text/css" rel="stylesheet" media="all" />
   </head>
 
@@ -184,7 +184,7 @@
       <div class="innerContent">
         <h1 class="classTitle">
           
-          <span>Math</span>
+          <span>ResourceLoader</span>
         </h1>
 
         <p class="description summary">
@@ -192,38 +192,30 @@
 
           
 
-          
+          Helps access the assets in your game.
         </p>
 
         
-
+          <div class="props">
+            <table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class ResourceLoader.">
+              <caption>Class Summary</caption>
+              <tbody>
+                <tr>
+                  <td class="nameDescription" >
+                    <div class="fixedFont">
+                      <b><a href="../symbols/ResourceLoader.html#constructor">ResourceLoader</a></b>()
+                    </div>
+                    <div class="description"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="instanceVariables">&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         
-          
-          
-            <div class="props">
-              <table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class Math.">
-                <caption>Field Summary</caption>
 
-                <tbody>
-                  
-                    <tr>
-                      <td class="nameDescription">
-                        <div class="fixedFont">
-                        Math.<b><a href="../symbols/Math.html#.TAU">TAU</a></b>
-                          <span class='lighter'>
-                          <em>static</em>
-                          </span>
-                        </div>
-                        <div class="description">The mathematical circle constant of 1 turn.</div>
-                      </td>
-                    </tr>
-                  
-                </tbody>
-              </table>
-            </div>
-          
-
-          
         
 
   <!--
@@ -233,16 +225,16 @@
           
           
             <div class="props">
-              <table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class Math.">
+              <table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class ResourceLoader.">
                 <caption>Method Summary</caption>
 
                 <tbody>
                   
                     <tr>
                       <td class="nameDescription">
-                        <div class="fixedFont">Math.<b><a href="../symbols/Math.html#.uuid">uuid</a></b>(length, radix)
+                        <div class="fixedFont"><b><a href="../symbols/ResourceLoader.html#urlFor">urlFor</a></b>(directory, name)
                         </div>
-                        <div class="description">Generate a random uuid.</div>
+                        <div class="description">Return the url for a particular asset.</div>
                       </td>
                     </tr>
                   
@@ -263,36 +255,31 @@
   #### CONSTRUCTOR DETAILS
   -->
         
+          <div class="details props">
+            <div class="innerProps">
+              <a name="constructor"></a>
+
+              <div class="fixedFont">
+                <b>ResourceLoader</b>()
+              </div>
+
+              <div class="description">
+                
+                
+              </div>
+
+              
+
+              
+
+              
+            </div>
+          </div>
+        
 
   <!--
   #### FIELD DETAILS
   -->
-        
-          <div class="details props">
-            <div class="innerProps">
-              
-                <div class="fixedFont heading">
-                  <a name=".TAU"></a>
-                  
-
-                  <span class="light">Math.</span><b>TAU</b>
-                  <span class='lighter'>
-                  <em>static</em>
-                  </span>
-                </div>
-
-                <div class="description">
-                  The mathematical circle constant of 1 turn.
-
-                  
-                </div>
-
-                
-
-                
-              
-            </div>
-          </div>
         
 
   <!--
@@ -303,36 +290,21 @@
             <div class="innerProps">
               
                 <div class="fixedFont heading">
-                  <a name=".uuid"></a>
+                  <a name="urlFor"></a>
                   <span class='lighter'>
-                  <em>static</em>
+                  
                   </span>
 
-                  <span class="light">Math.</span><b>uuid</b>(length, radix)
+                  <b>urlFor</b>(directory, name)
                 </div>
 
                 <div class="description">
-                  Generate a random uuid.
+                  Return the url for a particular asset.
 
-<code><pre>
-   // No arguments  - returns RFC4122, version 4 ID
-   Math.uuid()
-=> "92329D39-6F5C-4520-ABFC-AAB64544E172"
-
-   // One argument - returns ID of the specified length
-   Math.uuid(15)     // 15 character ID (default base=62)
-=> "VcydxgltxrVZSTV"
-
-   // Two arguments - returns ID of the specified length, and radix. (Radix must be <= 62)
-   Math.uuid(8, 2)  // 8 character ID (base=2)
-=> "01001010"
-
-   Math.uuid(8, 10) // 8 character ID (base=10)
-=> "47473046"
-
-   Math.uuid(8, 16) // 8 character ID (base=16)
-=> "098F4D35"
-</pre></code>
+      <code><pre>
+      ResourceLoader.urlFor("images", "player")
+      # => This returns the url for the file "player.png" in your images directory.
+      </pre></code>
 
                   
                 </div>
@@ -344,20 +316,41 @@
                     <dt class="heading">Parameters:</dt>
                     
                       <dt>
-                        <b>length</b>
+                        <b>directory</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
                         
                       </dt>
-                      <dd>The desired number of characters</dd>
+                      <dd>The directory your file is in.</dd>
                     
                       <dt>
-                        <b>radix</b>
+                        <b>name</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
                         
                       </dt>
-                      <dd>The number of allowable values for each character.</dd>
+                      <dd>The name of the file.</dd>
                     
                   </dl>
                 
 
+                
+                  <dl class="detailList nomargin">
+
+                    
+
+                    
+
+                    
+
+                    
+                      
+                        <dt class="heading">Returns <span class="light fixedFont"><a href="../symbols/String.html">String</a></span> :</dt>
+                        <dd>The full url of your asset</dd>
+                      
+                    
+
+                    
+
+                    
+
+                  </dl>
                 
               
             </div>

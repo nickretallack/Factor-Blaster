@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="generator" content="JsDoc Toolkit" />
     
-    <title>JsDoc Reference - Math</title>
+    <title>JsDoc Reference - Sound</title>
     <link href="/stylesheets/docs.css" type="text/css" rel="stylesheet" media="all" />
   </head>
 
@@ -184,7 +184,7 @@
       <div class="innerContent">
         <h1 class="classTitle">
           
-          <span>Math</span>
+          <span>Sound</span>
         </h1>
 
         <p class="description summary">
@@ -196,34 +196,26 @@
         </p>
 
         
-
+          <div class="props">
+            <table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class Sound.">
+              <caption>Class Summary</caption>
+              <tbody>
+                <tr>
+                  <td class="nameDescription" >
+                    <div class="fixedFont">
+                      <b><a href="../symbols/Sound.html#constructor">Sound</a></b>()
+                    </div>
+                    <div class="description">A simple interface for playing sounds in games.</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="instanceVariables">&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         
-          
-          
-            <div class="props">
-              <table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class Math.">
-                <caption>Field Summary</caption>
 
-                <tbody>
-                  
-                    <tr>
-                      <td class="nameDescription">
-                        <div class="fixedFont">
-                        Math.<b><a href="../symbols/Math.html#.TAU">TAU</a></b>
-                          <span class='lighter'>
-                          <em>static</em>
-                          </span>
-                        </div>
-                        <div class="description">The mathematical circle constant of 1 turn.</div>
-                      </td>
-                    </tr>
-                  
-                </tbody>
-              </table>
-            </div>
-          
-
-          
         
 
   <!--
@@ -233,16 +225,34 @@
           
           
             <div class="props">
-              <table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class Math.">
+              <table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class Sound.">
                 <caption>Method Summary</caption>
 
                 <tbody>
                   
                     <tr>
                       <td class="nameDescription">
-                        <div class="fixedFont">Math.<b><a href="../symbols/Math.html#.uuid">uuid</a></b>(length, radix)
+                        <div class="fixedFont">Sound.<b><a href="../symbols/Sound.html#.play">play</a></b>(id, maxChannels)
                         </div>
-                        <div class="description">Generate a random uuid.</div>
+                        <div class="description">Play a sound from your sounds 
+    directory with the name of `id`.</div>
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <td class="nameDescription">
+                        <div class="fixedFont">Sound.<b><a href="../symbols/Sound.html#.playFromUrl">playFromUrl</a></b>(url)
+                        </div>
+                        <div class="description">Play a sound from the given
+    url with the name of `id`.</div>
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <td class="nameDescription">
+                        <div class="fixedFont">Sound.<b><a href="../symbols/Sound.html#.stop">stop</a></b>(id)
+                        </div>
+                        <div class="description">Stop a sound while it is playing.</div>
                       </td>
                     </tr>
                   
@@ -263,36 +273,31 @@
   #### CONSTRUCTOR DETAILS
   -->
         
+          <div class="details props">
+            <div class="innerProps">
+              <a name="constructor"></a>
+
+              <div class="fixedFont">
+                <b>Sound</b>()
+              </div>
+
+              <div class="description">
+                A simple interface for playing sounds in games.
+                
+              </div>
+
+              
+
+              
+
+              
+            </div>
+          </div>
+        
 
   <!--
   #### FIELD DETAILS
   -->
-        
-          <div class="details props">
-            <div class="innerProps">
-              
-                <div class="fixedFont heading">
-                  <a name=".TAU"></a>
-                  
-
-                  <span class="light">Math.</span><b>TAU</b>
-                  <span class='lighter'>
-                  <em>static</em>
-                  </span>
-                </div>
-
-                <div class="description">
-                  The mathematical circle constant of 1 turn.
-
-                  
-                </div>
-
-                
-
-                
-              
-            </div>
-          </div>
         
 
   <!--
@@ -303,36 +308,22 @@
             <div class="innerProps">
               
                 <div class="fixedFont heading">
-                  <a name=".uuid"></a>
+                  <a name=".play"></a>
                   <span class='lighter'>
                   <em>static</em>
                   </span>
 
-                  <span class="light">Math.</span><b>uuid</b>(length, radix)
+                  <span class="light">Sound.</span><b>play</b>(id, maxChannels)
                 </div>
 
                 <div class="description">
-                  Generate a random uuid.
+                  Play a sound from your sounds 
+    directory with the name of `id`.
 
-<code><pre>
-   // No arguments  - returns RFC4122, version 4 ID
-   Math.uuid()
-=> "92329D39-6F5C-4520-ABFC-AAB64544E172"
-
-   // One argument - returns ID of the specified length
-   Math.uuid(15)     // 15 character ID (default base=62)
-=> "VcydxgltxrVZSTV"
-
-   // Two arguments - returns ID of the specified length, and radix. (Radix must be <= 62)
-   Math.uuid(8, 2)  // 8 character ID (base=2)
-=> "01001010"
-
-   Math.uuid(8, 10) // 8 character ID (base=10)
-=> "47473046"
-
-   Math.uuid(8, 16) // 8 character ID (base=16)
-=> "098F4D35"
-</pre></code>
+    <code><pre>
+    # plays a sound called explode from your sounds directory
+    Sound.play('explode')
+    </pre></code>
 
                   
                 </div>
@@ -344,16 +335,113 @@
                     <dt class="heading">Parameters:</dt>
                     
                       <dt>
-                        <b>length</b>
+                        <b>id</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
                         
                       </dt>
-                      <dd>The desired number of characters</dd>
+                      <dd>id or name of the sound file to play</dd>
                     
                       <dt>
-                        <b>radix</b>
+                        <b>maxChannels</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
                         
                       </dt>
-                      <dd>The number of allowable values for each character.</dd>
+                      <dd>max number of sounds able to be played simultaneously</dd>
+                    
+                  </dl>
+                
+
+                
+              
+                <div class="fixedFont heading">
+                  <a name=".playFromUrl"></a>
+                  <span class='lighter'>
+                  <em>static</em>
+                  </span>
+
+                  <span class="light">Sound.</span><b>playFromUrl</b>(url)
+                </div>
+
+                <div class="description">
+                  Play a sound from the given
+    url with the name of `id`.
+
+    <code><pre>
+    # plays the sound at the specified url
+    Sound.playFromUrl('http://YourSoundWebsite.com/explode.wav')
+    </pre></code>
+
+                  
+                </div>
+
+                
+
+                
+                  <dl class="detailList params">
+                    <dt class="heading">Parameters:</dt>
+                    
+                      <dt>
+                        <b>url</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
+                        
+                      </dt>
+                      <dd>location of sound file to play</dd>
+                    
+                  </dl>
+                
+
+                
+                  <dl class="detailList nomargin">
+
+                    
+
+                    
+
+                    
+
+                    
+                      
+                        <dt class="heading">Returns <span class="light fixedFont"><a href="../symbols/Sound.html">Sound</a></span> :</dt>
+                        <dd>this sound object</dd>
+                      
+                    
+
+                    
+
+                    
+
+                  </dl>
+                
+              
+                <div class="fixedFont heading">
+                  <a name=".stop"></a>
+                  <span class='lighter'>
+                  <em>static</em>
+                  </span>
+
+                  <span class="light">Sound.</span><b>stop</b>(id)
+                </div>
+
+                <div class="description">
+                  Stop a sound while it is playing.
+
+    <code><pre>
+    # stops the sound 'explode' from 
+    # playing if it is currently playing 
+    Sound.stop('explode')
+    </pre></code>
+
+                  
+                </div>
+
+                
+
+                
+                  <dl class="detailList params">
+                    <dt class="heading">Parameters:</dt>
+                    
+                      <dt>
+                        <b>id</b><span class='light fixedFont'> <a href="../symbols/String.html">String</a></span> 
+                        
+                      </dt>
+                      <dd>id or name of sound to stop playing.</dd>
                     
                   </dl>
                 
