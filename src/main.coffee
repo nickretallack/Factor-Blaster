@@ -1,3 +1,5 @@
+window_size = Point 480,320
+
 # Create the engine
 window.engine = Engine
   backgroundColor: Color("white")
@@ -6,8 +8,8 @@ window.engine = Engine
 # Add the player object to the engine
 engine.add
   class: "Player"
-  x: 160
-  y: 96
+  x: window_size.x/2
+  y: window_size.y
   color: "#F00"
 
 random_multiple = (factor_limit) ->
