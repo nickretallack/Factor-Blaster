@@ -43,8 +43,7 @@ Enemy = (I) ->
 
     rain_down @
 
-    I.x += I.velocity.x
-    I.y += I.velocity.y
+    self.change_position I.velocity
 
   self.hit = (value) ->
     if I.value % value == 0
