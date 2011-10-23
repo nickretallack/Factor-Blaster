@@ -13,7 +13,7 @@ window.circular_collision = (a,b) ->
 Enemy = (I) ->
   # Default values that can be overriden when creating a new player.
   Object.reverseMerge I,
-    speed: 3
+    speed: 1
     value: 2
     radius: 12
     color:'#eee'
@@ -39,7 +39,7 @@ Enemy = (I) ->
         enemy.I.velocity = enemy.I.velocity.add player_direction
 
     rain_down = (enemy) ->
-        enemy.I.velocity = enemy.I.velocity.add Point 0,1
+        enemy.I.velocity = enemy.I.velocity.add Point 0, enemy.I.speed
 
     rain_down @
 
