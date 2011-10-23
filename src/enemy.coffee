@@ -35,11 +35,11 @@ Enemy = (I) ->
 
     chase_player = (enemy) ->
         player = engine.find('Player')[0]
-        player_direction = player.center().subtract(self.center()).norm()
-        I.velocity.add player_direction
+        player_direction = player.center().subtract(enemy.center()).norm()
+        enemy.velocity.add player_direction
 
     rain_down = (enemy) ->
-        I.velocity.add Point 0,5
+        enemy.I.velocity.add Point 0,5
 
     rain_down()
 
